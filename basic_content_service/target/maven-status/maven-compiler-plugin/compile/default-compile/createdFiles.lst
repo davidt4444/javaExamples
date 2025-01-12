@@ -1,0 +1,4 @@
+com/bcs/app/controller/BlogPostController.class
+com/bcs/app/BlogPostApiApplication.class
+com/bcs/app/OpenApiConfig.class
+com/bcs/app/model/BlogPost.class
