@@ -1,3 +1,4 @@
+com/bcs/app/repository/BlogPostRepository.class
 com/bcs/app/controller/BlogPostController.class
 com/bcs/app/BlogPostApiApplication.class
 com/bcs/app/OpenApiConfig.class

@@ -11,3 +11,17 @@ https://x.com/i/grok/share/Bc4cnjnfilthZkcgHaPUIB6me
 
 Next steps 
 add in database logic
+Grok
+Take what had been generated thus far and add in mysql database storage for posts
+
+Take what has been generated and add in the following line to put the properties outside of the project. 
+        SpringApplication app = new SpringApplication(BlogPostApiApplication.class);
+        app.setDefaultProperties(Collections.singletonMap("spring.config.location", 
+                                                        "file:../../aws-resources/localhost-mac-java.properties"));
+        app.run(args);
+Also, inside the generated properties, it will set the ddl to auto regenerate the database on each build. Just make a note of that.
+
+To have it mirror the scheme from the dotnet example 
+Grok
+Generate to match this schema BlogPost...
+
