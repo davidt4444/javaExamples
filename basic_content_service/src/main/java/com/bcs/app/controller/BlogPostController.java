@@ -61,14 +61,10 @@ public class BlogPostController {
     @ApiResponse(responseCode = "204", description = "Blog post deleted")
     @ApiResponse(responseCode = "404", description = "Blog post not found")
     public ResponseEntity<Void> deleteBlogPost(@PathVariable Integer id) {
-System.out.println("--------------1---------------");
         if (blogPostRepository.existsById(id)) {
-            System.out.println("--------------2---------------");
             blogPostRepository.deleteById(id);
-            System.out.println("--------------3---------------");
             return ResponseEntity.noContent().build();
         }
-        System.out.println("--------------4---------------");
         return ResponseEntity.notFound().build();
     }
 }
