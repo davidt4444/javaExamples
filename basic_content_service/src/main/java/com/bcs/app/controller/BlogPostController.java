@@ -37,7 +37,7 @@ public class BlogPostController {
     @Operation(summary = "Find blog post by ID", description = "Retrieve a specific blog post by its ID from the database.")
     @ApiResponse(responseCode = "200", description = "Blog post found", content = @Content(schema = @Schema(implementation = BlogPost.class)))
     @ApiResponse(responseCode = "404", description = "Blog post not found")
-    public ResponseEntity<BlogPost> getBlogPostById(@PathVariable Long id) {
+    public ResponseEntity<BlogPost> getBlogPostById(@PathVariable Integer id) {
         return blogPostRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -47,7 +47,7 @@ public class BlogPostController {
     @Operation(summary = "Update blog post", description = "Update an existing blog post by ID in the database.")
     @ApiResponse(responseCode = "200", description = "Blog post updated", content = @Content(schema = @Schema(implementation = BlogPost.class)))
     @ApiResponse(responseCode = "404", description = "Blog post not found")
-    public ResponseEntity<BlogPost> updateBlogPost(@PathVariable Long id, @RequestBody BlogPost blogPostDetails) {
+    public ResponseEntity<BlogPost> updateBlogPost(@PathVariable Integer id, @RequestBody BlogPost blogPostDetails) {
         return blogPostRepository.findById(id).map(existingBlogPost -> {
             existingBlogPost.setTitle(blogPostDetails.getTitle());
             existingBlogPost.setContent(blogPostDetails.getContent());
@@ -60,11 +60,15 @@ public class BlogPostController {
     @Operation(summary = "Delete blog post", description = "Delete a blog post by ID from the database.")
     @ApiResponse(responseCode = "204", description = "Blog post deleted")
     @ApiResponse(responseCode = "404", description = "Blog post not found")
-    public ResponseEntity<Void> deleteBlogPost(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBlogPost(@PathVariable Integer id) {
+System.out.println("--------------1---------------");
         if (blogPostRepository.existsById(id)) {
+            System.out.println("--------------2---------------");
             blogPostRepository.deleteById(id);
+            System.out.println("--------------3---------------");
             return ResponseEntity.noContent().build();
         }
+        System.out.println("--------------4---------------");
         return ResponseEntity.notFound().build();
     }
 }

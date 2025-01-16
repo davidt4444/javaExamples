@@ -24,4 +24,4 @@ Also, inside the generated properties, it will set the ddl to auto regenerate th
 To have it mirror the scheme from the dotnet example 
 Grok
 Generate to match this schema BlogPost...
-
+https://x.com/i/grok/share/SkuwoaP5lPyKpyuSLccScnSvN
