@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "blog_posts")
+@Table(name = "JPost")
 public class BlogPost {
 
     @Id
@@ -20,7 +20,7 @@ public class BlogPost {
     @Size(max = 10000)
     private String content;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "createdAt", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "author", length = 200)
@@ -29,16 +29,16 @@ public class BlogPost {
     @Column(name = "category", length = 100)
     private String category;
 
-    @Column(name = "updated_at")
+    @Column(name = "updatedAt")
     private LocalDateTime updatedAt;
 
-    @Column(name = "likes_count", nullable = false)
+    @Column(name = "likesCount", nullable = false)
     private Integer likesCount;
 
-    @Column(name = "author_id")
+    @Column(name = "authorId")
     private Integer authorId;
 
-    @Column(name = "is_published", nullable = false)
+    @Column(name = "isPublished", nullable = false)
     private Boolean isPublished;
 
     @Column(name = "views", nullable = false)
