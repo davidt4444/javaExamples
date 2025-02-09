@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "JPost")
-public class BlogPost {
+public class JPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +45,7 @@ public class BlogPost {
     private Integer views;
 
     // Constructors
-    public BlogPost() {
+    public JPost() {
         this.createdAt = LocalDateTime.now();
         this.likesCount = 0;
         this.isPublished = false;
@@ -53,7 +53,7 @@ public class BlogPost {
     }
 
     // Constructor for creating a new blog post
-    public BlogPost(String title, String content, String author, String category) {
+    public JPost(String title, String content, String author, String category) {
         this.title = title;
         this.content = content;
         this.author = author;
