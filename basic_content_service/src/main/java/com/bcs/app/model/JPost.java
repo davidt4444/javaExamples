@@ -3,6 +3,7 @@ package com.bcs.app.model;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "JPost")
@@ -11,6 +12,10 @@ public class JPost {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "uniqueId", nullable = false, columnDefinition = "CHAR(36) DEFAULT (UUID())")
+    @Size(max = 36)
+    private String uniqueId = UUID.randomUUID().toString();
 
     @Column(nullable = false)
     @Size(min = 5, max = 200)
@@ -72,6 +77,9 @@ public class JPost {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public String getUniqueId() { return uniqueId; }
+    public void setUniqueId(String uniqueId) { this.uniqueId = uniqueId; }
 
     public String getTitle() {
         return title;
