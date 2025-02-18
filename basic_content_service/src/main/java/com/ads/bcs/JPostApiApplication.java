@@ -1,8 +1,6 @@
 package com.ads.bcs;
 
 import java.util.Collections;
-import java.io.*;
-import java.io.File;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
