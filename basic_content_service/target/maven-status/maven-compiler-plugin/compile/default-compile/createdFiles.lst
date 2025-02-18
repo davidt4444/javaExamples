@@ -1,5 +1,5 @@
-com/bcs/app/repository/JPostRepository.class
-com/bcs/app/OpenApiConfig.class
-com/bcs/app/JPostApiApplication.class
-com/bcs/app/controller/JPostController.class
-com/bcs/app/model/JPost.class
+com/ads/bcs/model/JPost.class
+com/ads/bcs/repository/JPostRepository.class
+com/ads/bcs/OpenApiConfig.class
+com/ads/bcs/JPostApiApplication.class
+com/ads/bcs/controller/JPostController.class
